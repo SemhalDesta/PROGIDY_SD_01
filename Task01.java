@@ -24,6 +24,10 @@ public class Task01 {
         System.out.print("Your choice should be a number. Enter a new one: ");
         choice=input.next().charAt(0);
     }
+    while(choice!='1'&&choice!='2'&&choice!='3'&&choice!='4'){
+        System.out.print("Invalid choice entered. Enter a new one: ");
+        choice=input.next().charAt(0);
+    }
     switch(choice){
         case '1':
             System.out.print("Please enter the temprature: ");
@@ -35,7 +39,7 @@ public class Task01 {
             double temperature=Double.parseDouble(temp);
             double tF=(9.0/5)*temperature+32;
             double tK=temperature+273;
-            System.out.println("Temperature in Fahrenheit is: "+tF+"\nTemperature in Kelvin is: "+tK);  
+            System.out.println("Temperature in Fahrenheit is: "+tF+"\nTemperature in Kelvin is: "+tK+"\n");  
             break;
         case '2':
             System.out.print("Please enter the temprature: ");
@@ -47,7 +51,7 @@ public class Task01 {
             temperature=Double.parseDouble(temp);
             double tC=temperature-273;
             tF=(9.0/5)*tC+32;
-            System.out.println("Temperature in Fahrenheit is: "+tF+"\nTemperature in Celsius is: "+tC);  
+            System.out.println("Temperature in Fahrenheit is: "+tF+"\nTemperature in Celsius is: "+tC+"\n");  
             break;
         case '3':
             System.out.print("Please enter the temprature: ");
@@ -59,18 +63,12 @@ public class Task01 {
             temperature=Double.parseDouble(temp);
             tC=(5.0/9)*(temperature-32);
             tK=tC+273;
-            System.out.println("Temperature in Celsius is: "+tC+"\nTemperature in Kelvin is: "+tK);  
-            break;
-        case '4':
-            continuation=false;
-            System.out.print("Thank you!");
-            System.exit(0);
+            System.out.println("Temperature in Celsius is: "+tC+"\nTemperature in Kelvin is: "+tK+"\n");  
             break;
         default:
-        while(choice!='1'&&choice!='2'&&choice!='3'&&choice!='4'){
-        System.out.print("Invalid choice entered. Enter a new one: ");
-        choice=input.next().charAt(0);
-        }    
+        continuation=false;
+            System.out.print("Thank you!");
+            System.exit(0);    
     }
     } 
    }
